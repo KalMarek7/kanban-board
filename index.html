@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Kanban Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="pico_css/pico.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js" defer></script>
+    <script
+      id="DragDropTouch"
+      src="https://bernardo-castilho.github.io/DragDropTouch/DragDropTouch.js"
+    ></script>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li>&copy; KalMar 2023</li>
+      </ul>
+    </nav>
+    <article>
+      <div id="mainContainer" class="grid container">
+        <input
+          id="newTask"
+          type="text"
+          placeholder="New task"
+          ondrop="return false;"
+        />
+        <button class="addButton secondary" id="addButton" type="button">
+          + Add
+        </button>
+        <div
+          class="kanbanContainer"
+          id="notStartedContainer"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p class="kanbanName">Not Started</p>
+          <div class="taskContainer" id="notStarted"></div>
+        </div>
+        <div
+          class="kanbanContainer"
+          id="inProgressContainer"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p class="kanbanName">In Progress</p>
+          <div class="taskContainer" id="inProgress"></div>
+        </div>
+        <div
+          class="kanbanContainer"
+          id="completedContainer"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p class="kanbanName">Completed</p>
+          <div class="taskContainer" id="completed"></div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

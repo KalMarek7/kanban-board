@@ -1,0 +1,96 @@
+html {
+  background-image: url("pexels-jakub-novacek-924824(1).jpg");
+  background-attachment: fixed;
+  background-position: center;
+}
+
+nav {
+  justify-content: center;
+  box-shadow: inset 0px 0px 100px -35px var(--code-kbd-color);
+  border-bottom: 1px solid var(--form-element-border-color);
+}
+
+article {
+  margin: 1em;
+  background: none;
+  box-shadow: none;
+}
+
+button {
+  box-shadow: 5px 5px 0px 0px #374956;
+}
+
+#mainContainer {
+  border: 1px solid var(--form-element-border-color);
+  padding: 2em;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  box-shadow: inset 0px 0px 100px -35px var(--code-kbd-color);
+  border-radius: var(--border-radius);
+}
+
+#newTask:focus {
+  border: 1px solid var(--secondary);
+}
+
+.kanbanContainer {
+  border: 1px solid #374956;
+  border-radius: 0.25rem;
+  background: var(--card-background-color);
+  grid-row: 2;
+}
+
+.addButton {
+  width: 5em;
+}
+
+.kanbanName {
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.taskContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task {
+  width: 80%;
+  margin-right: 0.2em;
+  padding: 1em 1em;
+  border: solid 1px #374956;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0px 0px #374956;
+  background-color: #11191f;
+  transition: var(--transition);
+}
+
+.task:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.task:hover {
+  background-color: var(--secondary);
+  cursor: pointer;
+}
+
+.task:focus {
+  background-color: var(--blockquote-border-color);
+}
+
+@media (max-width: 768px) {
+  #mainContainer {
+    grid-template-columns: 4fr 1fr;
+  }
+  .kanbanContainer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: unset;
+  }
+  .kanbanContainer:not(:last-child) {
+    margin-bottom: var(--grid-spacing-horizontal);
+  }
+}
